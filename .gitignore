@@ -1,2 +1,4 @@
 .git
 .remote-sync.json
+.gitignore
+client_secret.json
