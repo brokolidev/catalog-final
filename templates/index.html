@@ -1,0 +1,18 @@
+{% include "header.html" %}
+
+    {% if login_session['username']: %}
+    <p class="lead">
+        <a href="/category/new">
+            <button type="button" name="button" class="btn btn-primary">Add a new category</button>
+        </a>
+        <a href="/item/new">
+            <button type="button" name="button" class="btn btn-primary">Add a new item</button>
+        </a>
+    </p>
+    {% else %}
+    <p class="lead">Login to add or edit items.</p>
+    {% endif %}
+
+    <h1>Test App</h1>
+
+{% include "footer.html" %}

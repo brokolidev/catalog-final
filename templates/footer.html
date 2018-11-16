@@ -1,0 +1,47 @@
+        </div> <!-- /container -->
+
+<script type="text/javascript">
+// for google login callback
+function signInCallback(authResult){
+    if(authResult['code']){
+        $('#signinButton').attr('style', 'display:none');
+        $.ajax({
+            type: 'POST',
+            url: '/gconnect?state={{STATE}}',
+            processData: false,
+            contentType: 'application/octet-stream; charset=utf-8',
+            data: authResult['code'],
+            success: function(result){
+                if(result){
+                    // $('#result').html(result)
+                    window.location.replace("/");
+                } else if (authResult['error']){
+                    console.log('There was an error: ' + authResult['error']);
+                } else{
+                    $('#result').html('Failed to make a server-side call. Check your configuration and console.');
+                }
+            }
+        });
+    }
+}
+
+// for deleting a category
+$('.delete_category').on('click', function(e){
+    e.preventDefault();
+    if (confirm("Are you sure you want to delete this category?") == true) {
+        url = $(this).children('a').attr('href');
+        window.location.href = url;
+    }
+});
+
+$('.delete_item').on('click', function(e){
+    e.preventDefault();
+    if (confirm("Are you sure you want to delete this item?") == true) {
+        url = $(this).children('a').attr('href');
+        window.location.href = url;
+    }
+});
+
+</script>
+    </body>
+</html>
