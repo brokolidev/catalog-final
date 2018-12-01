@@ -12,13 +12,6 @@ And this application is specifically developed for deploying on AWS Lightsail us
 - WSGI : [_mod_wsgi_](https://modwsgi.readthedocs.io/en/develop/)
 
 
-# For a reviewer
-- IP Address : 13.125.61.97
-- URL : http://13.125.61.97.xip.io
-- SSH Port changed to 2200
-- Public SSH key is located in /home/grader/.ssh/autorized_keys
-
-
 ## The database
 
 The database has 2 tables. And database_setup.py contains the definition of it.
